@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- update the Windows API version to reflect your TargetFramework -->
+    <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+    <CsWinRTComponent>true</CsWinRTComponent>
+    <CsWinRTEnableLogging>true</CsWinRTEnableLogging>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratedFilesDir Condition="'$(GeneratedFilesDir)'==''">$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Generated Files'))</GeneratedFilesDir>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="UserControl1.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.1" />
+    <PackageReference Include="Microsoft.WinUI" Version="3.0.0-preview4.210126.6-CI" />
+  </ItemGroup>
+  <ItemGroup>
+    <_PackageFiles Include="NET5Lib.targets" PackagePath="build;buildTransitive" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>
