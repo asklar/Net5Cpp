@@ -1,5 +1,5 @@
 ========================================================================
-    C++/WinRT CppAppDesktop Project Overview
+    C++/WinRT App1 Project Overview
 ========================================================================
 
 This project demonstrates how to get started writing XAML apps directly

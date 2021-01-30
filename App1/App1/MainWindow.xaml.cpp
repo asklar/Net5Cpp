@@ -10,11 +10,13 @@ using namespace Microsoft::UI::Xaml;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace winrt::CppAppDesktop::implementation
+namespace winrt::App1::implementation
 {
     MainWindow::MainWindow()
     {
         InitializeComponent();
+        NET5Lib::Class1 c;
+        c.IsGreat(c.Sauce());
     }
 
     int32_t MainWindow::MyProperty()

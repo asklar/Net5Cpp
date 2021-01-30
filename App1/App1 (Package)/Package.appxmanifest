@@ -7,12 +7,12 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="7e08ee84-f4b3-4ed4-9099-fda35cde934f"
+    Name="74fa3a8a-eb39-41d8-8a44-95adf2d0da57"
     Publisher="CN=asklar"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>CppAppDesktop (Package)</DisplayName>
+    <DisplayName>App1 (Package)</DisplayName>
     <PublisherDisplayName>asklar</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -31,8 +31,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="CppAppDesktop (Package)"
-        Description="CppAppDesktop (Package)"
+        DisplayName="App1 (Package)"
+        Description="App1 (Package)"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">

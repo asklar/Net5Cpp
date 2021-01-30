@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.props" Condition="Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.props')" />
+  <Import Project="..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.props" Condition="Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.props')" />
   <Import Project="..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{18c2c3f4-4a74-4703-8c59-95e9adb1bd9c}</ProjectGuid>
-    <ProjectName>CppAppDesktop</ProjectName>
-    <RootNamespace>CppAppDesktop</RootNamespace>
+    <ProjectGuid>{82558664-c629-4107-9f53-6710824085dd}</ProjectGuid>
+    <ProjectName>App1</ProjectName>
+    <RootNamespace>App1</RootNamespace>
     <!--
       $(TargetName) should be same as $(RootNamespace) so that the produced binaries (.exe/.pri/etc.)
       have a name that matches the .winmd
@@ -54,6 +54,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <DesktopCompatible>true</DesktopCompatible>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
@@ -138,6 +139,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="PropertySheet.props" />
+    <None Include="WinRT.Host.runtimeconfig.json">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <Text Include="readme.txt">
       <DeploymentContent>false</DeploymentContent>
     </Text>
@@ -145,8 +149,8 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.targets')" />
-    <Import Project="..\..\packages\Microsoft.VCRTForwarders.140.1.0.6\build\native\Microsoft.VCRTForwarders.140.targets" Condition="Exists('..\..\packages\Microsoft.VCRTForwarders.140.1.0.6\build\native\Microsoft.VCRTForwarders.140.targets')" />
-    <Import Project="..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.targets" Condition="Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.targets')" />
+    <Import Project="..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.targets" Condition="Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.targets')" />
+    <Import Project="..\..\packages\NET5Lib.1.0.0\build\NET5Lib.targets" Condition="Exists('..\..\packages\NET5Lib.1.0.0\build\NET5Lib.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -154,8 +158,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.props'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Windows.CppWinRT.2.0.200921.6\build\native\Microsoft.Windows.CppWinRT.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Microsoft.VCRTForwarders.140.1.0.6\build\native\Microsoft.VCRTForwarders.140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VCRTForwarders.140.1.0.6\build\native\Microsoft.VCRTForwarders.140.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.props'))" />
-    <Error Condition="!Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.6-CI\build\native\Microsoft.WinUI.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.WinUI.3.0.0-preview4.210126.9-CI\build\native\Microsoft.WinUI.targets'))" />
+    <Error Condition="!Exists('..\..\packages\NET5Lib.1.0.0\build\NET5Lib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NET5Lib.1.0.0\build\NET5Lib.targets'))" />
   </Target>
 </Project>

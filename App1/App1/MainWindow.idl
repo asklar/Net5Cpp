@@ -1,4 +1,4 @@
-namespace CppAppDesktop
+namespace App1
 {
     [default_interface]
     runtimeclass MainWindow : Microsoft.UI.Xaml.Window

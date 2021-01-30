@@ -7,7 +7,7 @@
 
 #pragma pop_macro("GetCurrentTime")
 
-namespace winrt::CppAppDesktop::implementation
+namespace winrt::App1::implementation
 {
     struct App : AppT<App>
     {
